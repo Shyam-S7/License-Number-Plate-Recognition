@@ -12,12 +12,12 @@ env/
 .ipynb_checkpoints/
 
 # YOLO model files
-*.pt
+
 *.onnx
 *.weights
 
 # Video files
-*.mp4
+
 *.avi
 *.mov
 *.mkv
