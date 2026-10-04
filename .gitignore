@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# YOLO model files
+*.pt
+*.onnx
+*.weights
+
+# Video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Images / generated outputs
+runs/
+output/
+outputs/
+results/
+*.jpg
+*.jpeg
+*.png
+
+# OCR / model cache
+.paddlex/
+.easyocr/
+~/.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment variables
+.env
