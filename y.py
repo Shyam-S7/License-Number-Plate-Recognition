@@ -3,7 +3,7 @@ from ultralytics import YOLO
 
 model = YOLO("models/best.pt")
 
-cap = cv2.VideoCapture("videos/cmf.mp4")
+cap = cv2.VideoCapture("videos/cm.mp4")
 
 while True:
     ret, frame = cap.read()
