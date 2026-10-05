@@ -13,7 +13,7 @@ model = YOLO("models/best.pt")
 reader = easyocr.Reader(["en"], gpu=False)
 
 # Open video
-cap = cv2.VideoCapture("videos/cmf.mp4")
+cap = cv2.VideoCapture("videos/cm.mp4")
 
 if not cap.isOpened():
     print("Error: Cannot open video")
@@ -178,9 +178,9 @@ model = YOLO("models/best.pt")
 reader = easyocr.Reader(["en"], gpu=False) 
  
 # Open video 
-cap = cv2.VideoCapture("videos/cmf.mp4") 
- 
-if not cap.isOpened(): 
+cap = cv2.VideoCapture("videos/cm.mp4") 
+
+if not cap.isOpened():
     print("Error: Cannot open video") 
     exit() 
  
@@ -315,6 +315,8 @@ cap.release()
 cv2.destroyAllWindows()   
 
 '''
+
+
 #PaddleOCR
 
 import cv2
@@ -335,7 +337,7 @@ ocr = PaddleOCR(
 )
 
 # Open video
-cap = cv2.VideoCapture("videos/traffic.mp4")
+cap = cv2.VideoCapture("videos/cm.mp4")
 
 if not cap.isOpened():
     print("Error: Cannot open video")
@@ -344,8 +346,8 @@ if not cap.isOpened():
 frame_count = 0
 skip_frames = 5
 
-
-def clean_plate(text):
+PLATE_FORMAT = "INDIAN"
+def clean_indian_plate(text):
     text = text.upper()
     text = re.sub(r"[^A-Z0-9]", "", text)
 
@@ -355,6 +357,13 @@ def clean_plate(text):
         return text
 
     return ""
+
+
+def clean_general_plate(text):
+    text = text.upper()
+    text = re.sub(r"[^A-Z0-9]", "", text)
+
+    return text
 
 
 while True:
@@ -436,7 +445,13 @@ while True:
                         raw_text += text
 
                 # Clean OCR result
-                plate_number = clean_plate(raw_text)
+                
+                if PLATE_FORMAT == "INDIAN":
+                   plate_number = clean_indian_plate(raw_text)
+                else:
+                   plate_number = clean_general_plate(raw_text)
+                
+                   
 
                 if plate_number:
 
