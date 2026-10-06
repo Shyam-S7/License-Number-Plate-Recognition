@@ -8,6 +8,9 @@ venv/
 .venv/
 env/
 
+
+*.lock
+
 # Jupyter
 .ipynb_checkpoints/
 

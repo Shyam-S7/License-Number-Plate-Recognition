@@ -183,4 +183,3 @@ EasyOCR → WHAT?
 
 **Shyam S7**
 
-B.Tech – Artificial Intelligence & Data Science
